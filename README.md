@@ -23,8 +23,7 @@ hm-sitting/
 ├── fxmanifest.lua
 ├── config.lua
 ├── client.lua
-└── bridge/
-    └── target.lua
+
 ```
 
 ---
