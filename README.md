@@ -33,7 +33,7 @@ hm-sitting/
 1. Ordner `hm-sitting` in dein `resources` Verzeichnis legen
 2. In der `server.cfg` eintragen:
    ```
-   ensure hm-sitting
+   ensure hm_sitting
    ```
 3. In der `config.lua` das gewünschte Target-System einstellen (siehe unten)
 
