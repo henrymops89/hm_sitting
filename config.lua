@@ -1,291 +1,322 @@
 Config = {}
 
--- Alle GTA V Sitz-Props
-Config.ChairProps = {
-    -- APA Interior Chairs
-    'apa_mp_h_din_chair_12',
-    'apa_mp_h_din_chair_4',
-    'apa_mp_h_din_chair_8',
-    'apa_mp_h_din_chair_9',
-    'apa_mp_h_stn_chairarm_12',
-    'apa_mp_h_stn_chairarm_13',
-    'apa_mp_h_stn_chairarm_24',
-    'apa_mp_h_stn_chairarm_25',
-    'apa_mp_h_stn_chairarm_26',
-    'apa_mp_h_stn_chairarm_3',
-    'apa_mp_h_stn_chairarm_9',
-    'apa_mp_h_stn_chairstrip_04',
-    'apa_mp_h_stn_chairstrip_05',
-    'apa_mp_h_yacht_armchair_01',
-    'apa_mp_h_yacht_armchair_03',
-    'apa_mp_h_yacht_armchair_04',
+-- Debugmodes
+Config.Debugmode = false -- General debugging, shows what seats/beds you can sit/lay on and the direction you will be facing, also enables debugging commands. (Only shows seats nearby)
+Config.DebugPoly = false -- This is not advised unless you have set your PolyZone script set to only render polys nearby, the prefeered way is to go into list.lua and set the debug on the polyzone group instead! (see gabz_atom)
 
-    -- BA / BKR Props
-    'ba_prop_battle_club_chair_01',
-    'bkr_prop_clubhouse_chair_01',
-    'bkr_prop_clubhouse_offchair_01a',
-    'bkr_prop_clubhouse_offchair_01b',
-    'bkr_prop_clubhouse_offchair_01c',
-    'bkr_prop_clubhouse_offchair_01d',
-    'bkr_prop_clubhouse_offchair_01e',
-    'bkr_prop_clubhouse_offchair_01f',
-    'bkr_prop_clubhouse_offchair_01g',
+-- For those who use the TMC framework
+Config.UseTMCFramework = false
 
-    -- EX Props
-    'ex_mp_h_din_chair_12',
-    'ex_mp_h_din_chair_4',
-    'ex_mp_h_din_chair_8',
-    'ex_mp_h_din_chair_9',
-    'ex_mp_h_off_chairstrip_01',
-    'ex_mp_h_off_easychair_01',
-    'ex_mp_h_stn_chairarm_03',
-    'ex_mp_h_stn_chairarm_24',
-    'ex_mp_h_stn_chairarm_25',
-    'ex_mp_h_stn_chairarm_26',
-    'ex_mp_h_stn_chairarm_9',
-    'ex_prop_exec_offchair',
+-- Teleport to the last position before getting seated when we found no way to get to the seat
+Config.TeleportToLastPosWhenNoRoute = false
 
-    -- HEI Heist Props
-    'hei_heist_din_chair_01',
-    'hei_heist_din_chair_02',
-    'hei_heist_din_chair_03',
-    'hei_heist_din_chair_04',
-    'hei_heist_stn_chairarm_01',
-    'hei_heist_stn_chairarm_02',
-    'hei_heist_stn_chairarm_03',
-    'hei_heist_stn_chairarm_04',
-    'hei_prop_heist_off_chair',
+-- Always teleport in/out of the seat
+Config.AlwaysTeleportToSeat = false
+Config.AlwaysTeleportOutOfSeat = false
 
-    -- IMP Props
-    'imp_prop_impexp_offchair_01a',
+-- Tthe interaction and prompts distance, used for max distance the 3rd eye can see, how far the /sit command will look for entites and how close you have to be for a prompt to be showed if you use those.
+Config.MaxInteractionDist = 2.0
+Config.MaxPromptDist = 1.8
 
-    -- Standard Props – Flugzeug / Armchairs
-    'prop_air_seat_01',
-    'prop_air_seat_02',
-    'prop_air_seat_03',
-    'prop_armchair_01',
-    'prop_armchair_02',
-    'prop_armchair_03',
-    'prop_armchair_04',
-    'prop_armchair_05',
-    'prop_armchair_06',
-    'prop_armchair_07',
+-- The maximum amount of tilt a object can have before it is rendered unsuitable to sit on
+Config.MaxTilt = 20.0
 
-    -- Bar Stools
-    'prop_bar_stool_01',
-    'prop_bar_stool_02',
-    'prop_bar_stool_03',
-    'prop_bar_stool_04',
-    'prop_bar_stool_05',
-    'prop_bar_stool_06',
-    'prop_bar_stool_07',
-    'prop_bar_stool_08',
-    'prop_bar_stool_09',
-    'prop_bar_stool_10',
+-- These will be the default keys/buttons
+Config.DefaultKeybinds = {
+    GetUp = {
+        Keyboard = 'X',
+        PadAnalog = 'RRIGHT_INDEX'
+    },
 
-    -- Bänke
-    'prop_bench_01a',
-    'prop_bench_01b',
-    'prop_bench_01c',
-    'prop_bench_02',
-    'prop_bench_03',
-    'prop_bench_04',
-    'prop_bench_05',
-    'prop_bench_06',
-    'prop_bench_07',
-    'prop_bench_08',
-    'prop_bench_09',
-    'prop_bench_10',
-    'prop_bench_11',
-    'prop_bench_12',
-    'prop_bench_13',
-    'prop_bench_14',
-    'prop_bench_15',
-    'prop_bench_16',
-    'prop_bench_17',
-    'prop_bench_18',
-
-    -- Bus Seats
-    'prop_bus_seat_01',
-    'prop_bus_seat_02',
-    'prop_bus_seat_03',
-
-    -- Standard Stühle
-    'prop_chair_01a',
-    'prop_chair_01b',
-    'prop_chair_02',
-    'prop_chair_03',
-    'prop_chair_04a',
-    'prop_chair_04b',
-    'prop_chair_05',
-    'prop_chair_06',
-    'prop_chair_07',
-    'prop_chair_08',
-    'prop_chair_09',
-    'prop_chair_10',
-
-    -- Couches
-    'prop_couch_01',
-    'prop_couch_02',
-    'prop_couch_03',
-    'prop_couch_04',
-    'prop_couch_lg_02',
-    'prop_couch_lg_05',
-    'prop_couch_sm1_07',
-    'prop_couch_sm2_07',
-
-    -- Office / Sonstige
-    'prop_cs_office_chair',
-    'prop_direct_chair_01',
-    'prop_direct_chair_02',
-    'prop_gc_chair02',
-    'prop_ld_farm_chair01',
-    'prop_ld_farm_couch01',
-    'prop_ld_seat_01',
-    'prop_ld_seat_02',
-    'prop_ld_seat_03',
-    'prop_off_chair_01',
-    'prop_off_chair_03',
-    'prop_off_chair_04',
-    'prop_off_chair_04_s',
-    'prop_off_chair_04b',
-    'prop_off_chair_05',
-    'prop_old_deck_chair',
-    'prop_old_wood_chair',
-
-    -- Pool Lounger
-    'prop_pool_lounger_01',
-    'prop_pool_lounger_02',
-    'prop_pool_lounger_03',
-    'prop_pool_lounger_04',
-    'prop_pool_lounger_05',
-
-    -- Weitere
-    'prop_rock_chair_01',
-    'prop_rub_couch01',
-    'prop_seat_cushion_01',
-    'prop_seat_cushion_02',
-    'prop_seat_cushion_03',
-    'prop_seat_cushion_04',
-    'prop_skid_chair_01',
-    'prop_stool_01',
-    'prop_stool_02',
-    'prop_stool_03',
-    'prop_stool_04',
-    'prop_stool_05',
-    'prop_table_01_chr_a',
-    'prop_table_01_chr_b',
-    'prop_table_02_chr',
-    'prop_wait_bench_01',
-    'prop_wait_bench_02',
-    'prop_waiting_seat_01',
-    'prop_waiting_seat_02',
-
-    -- V Club / Corp
-    'v_club_barchair',
-    'v_club_chair_01',
-    'v_club_officechair',
-    'v_club_stagechair',
-    'v_club_vuarmchair',
-    'v_corp_bk_chair3',
-    'v_corp_cd_chair',
-    'v_corp_offchair',
-    'v_corp_sidechair',
-    'v_corp_sidechairfd',
-
-    -- V ILEV
-    'v_ilev_barstool',
-    'v_ilev_chair02_ped',
-    'v_ilev_hd_chair',
-    'v_ilev_leath_chr',
-    'v_ilev_lounger',
-    'v_ilev_m_sofa',
-
-    -- V Med
-    'v_med_emptybed',
-    'v_med_lounger1',
-    'v_med_lounger2',
-    'v_med_p_sofa',
-    'v_med_p_sofa_02',
-    'v_med_p_sofa_03',
-
-    -- V Res
-    'v_res_d_armchair',
-    'v_res_d_chair',
-    'v_res_d_highchair',
-    'v_res_d_rattan_chair',
-    'v_res_d_sofa',
-    'v_res_d_sofa_sml',
-    'v_res_fa_chair01',
-    'v_res_fa_chair02',
-    'v_res_fa_chair03',
-    'v_res_fa_chair04',
-    'v_res_fh_sofa',
-    'v_res_j_dinechair',
-    'v_res_jarmchair',
-    'v_res_jchair',
-    'v_res_m_armchair',
-    'v_res_m_dinechair',
-    'v_res_m_h_sofa',
-    'v_res_m_l_chair1',
-    'v_res_m_l_chair2',
-    'v_res_m_loungechair',
-    'v_res_m_sidechair',
-    'v_res_m_stool',
-    'v_res_m_volchair',
-    'v_res_mp_sofa',
-    'v_res_tre_chair',
-    'v_res_tre_sofa',
-
-    -- V Serv CT Chairs
-    'v_serv_ct_chair02',
-    'v_serv_ct_chair03',
-    'v_serv_ct_chair04',
-    'v_serv_ct_chair05',
-    'v_serv_ct_chair06',
-    'v_serv_ct_chair07',
-    'v_serv_ct_chair08',
-    'v_serv_ct_chair09',
-    'v_serv_ct_chair10',
-    'v_serv_ct_chair11',
-    'v_serv_ct_chair12',
-    'v_serv_ct_chair13',
-    'v_serv_ct_chair14',
-    'v_serv_ct_chair15',
-    'v_serv_ct_chair16',
-    'v_serv_ct_chair17',
-    'v_serv_ct_chair18',
-    'v_serv_ct_chair19',
-    'v_serv_ct_chair20',
-    'v_serv_ct_chair21',
-    'v_serv_ct_chair22',
-    'v_serv_ct_chair23',
-    'v_serv_ct_chair24',
-    'v_serv_ct_chair25',
-    'v_serv_ct_chair26',
-    'v_serv_ct_chair27',
-    'v_serv_ct_chair28',
-    'v_serv_ct_chair29',
-    'v_serv_ct_chair30',
+    -- Only used in the prompts system
+    SitDown = {
+        SitKeyboard = 'E',
+        LayKeyboard = 'G',
+        SitPadAnalog = 'LLEFT_INDEX',
+        LayPadAnalog = 'LRIGHT_INDEX'
+    }
 }
 
--- Radius in dem nach einem Stuhl gesucht wird (für ESX E-Key Methode)
-Config.SearchRadius = 2.0
+-- Whether or not to add chat suggestion.
+Config.AddChatSuggestions = true
 
--- Animation
-Config.Anim = {
-    dict = 'amb@world_human_tourist_mobile@male@base',
-    clip = 'base',
+-- Whether or not to use the prompt system. NOTE: this uses extra resources.
+Config.UsePrompts = true
+
+-- If true, instructions on how to get up form the seat/bed will be displayed in the top left corner of your screen
+Config.ShowHelpText = false
+
+-- The script will ATTEMPT (no guarantee) to prevent showing help text when other scripts are allready showing help texts, this will stop some of the annoying pling sounds.
+Config.PreventHelpTextOverwrites = true
+
+-- Whether or not trigger an reduce stress event/export when sitting/laying down. You wil have to add a event/export yourself for this to work.
+Config.ReduceStress = false
+
+-- Invalidates the idle cam while you are seated/laying down.
+Config.InvalidateIdleCam = true
+
+-- Force first person view while sitting/laying down.
+Config.FirstPerson = true
+
+-- The targeting solution (3rd eye) to use.
+-- false       = don't use any targeting solution. ('false' will NOT work, false NEEDS to be a boolean.)
+-- 'qb-target' = qb-target by BerkieBb and its many other contributors. (https://github.com/BerkieBb/qb-target)
+-- 'qtarget'   = qTarget by Linden (thelindat), Noms (OfficialNoms) and its many other contributors. (https://github.com/overextended/qtarget)
+-- 'ox_target' = ox_target by Linden (thelindat) and its many other contributors. (https://github.com/overextended/ox_target)
+Config.Target = 'ox_target'
+
+-- Use the coords of where the 3rd eye intersects with the object to find the closest seat. If set to false the coords of the player ped will be used instead.
+Config.UseTargetingCoords = true
+
+-- These are the icons/labels if we use a targeting solution.
+Config.Targeting = {
+    SitIcon = "fas fa-chair",
+    LayIcon = "fas fa-bed",
+    SitLabel = "Sit Down",
+    LayLabel = "Lay Down",
 }
 
--- Sitz-Offset (wie der Spieler auf dem Stuhl positioniert wird)
-Config.SitOffset = vector3(0.0, 0.0, 0.35)
+-- The localization for the notifications, chat suggestions and keymapping.
+Config.Lang = {
+    -- Notifications
+    Notification = {
+        OccupiedSit = "This seat is already occupied!",
+        OccupiedLay = "You can't lay down here!",
+        NoAvailable = "No seat is avalible!",
+        NoFound = "No seats were found!",
+        NoBedFound = "Nothing to lay down on was found!",
+        TooTilted = "This seat is too tilted!",
+        CannotReachSeat = "You can't reach this seat!",
+        CannotSitInSeat = "You can't sit in this seat!",
+        CannotReachBed = "You can't reach this bed/bench!",
+        AlreadyAttemptingToSit = "You are already attempting to sit down!",
+        AlreadyAttemptingToLay = "You are already attempting to lay down!"
+    },
 
--- First Person View beim Sitzen erzwingen?
-Config.ForceFPV = true -- true = First Person, false = Kamera bleibt wie sie ist
+    -- Chat Suggestions
+    ChatSuggestions = {
+        Sit = "Sit down on the closest seat",
+        Lay = "Lay down on the closest bed/bench"
+    },
 
--- Welches Framework / Target-System wird genutzt?
--- 'ox'     → ox_target (QBox / QBCore mit ox_target)
--- 'qb'     → qb-target
--- 'esx'    → E-Key Prompt (ox_lib drawText)
-Config.TargetSystem = 'ox' -- 
+    -- Key Mapping
+    KeyMapping = {
+        -- %s is automatically replaced with the key they need to press.
+        SitDown = "Press %s to sit down",
+        LayDown = "Press %s to lay down",
+        GetUp = "Press %s to get up"
+    },
+
+    -- Description in Settings>Key Bindings>Fivem
+    KeyBindingDesc = {
+        Keyboard = {
+            SitDown = "Sit - Sit Down (Seat)",
+            LayDown = "Sit - Lay Down (Bed/Bench)",
+            GetUp = "Sit - Get Up"
+        },
+        PadAnalog = {
+            SitDown = "Sit - Sit Down (Seat) - Controller",
+            LayDown = "Sit - Lay Down (Bed/Bench) - Controller",
+            GetUp = "Sit - Get Up - Controller"
+        }
+    }
+}
+
+-- The diffrent sitting settings, don't touch unless you know what you are doing.
+Config.SitTypes = {
+    ['default'] = { -- Default settings, if non has been spesified
+        skipGoStraightTask = false,
+        teleportIn = false,
+        teleportOut = false,
+        timeout = 8,
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", offset = vector4(0.0, 0.0, 0.0, 0.0) }
+        }
+        -- animation = { dict = "timetable@jimmy@mics3_ig_15@", name = "idle_a_jimmy", offset = vector4(0.0, 0.0, 0.0, 0.0), flag = 1 }
+    },
+    ['chair'] = {
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER" }
+        }
+    },
+    ['chair2'] = {
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER" },
+            [2] = { name = "PROP_HUMAN_SEAT_ARMCHAIR", offset = vector4(0.0, 0.05, 0.0, 0.0) }
+        }
+    },
+    ['chair3'] = {
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER" },
+            [2] = { name = "PROP_HUMAN_SEAT_ARMCHAIR", offset = vector4(0.0, 0.05, 0.0, 0.0) },
+            [3] = { name = "PROP_HUMAN_SEAT_DECKCHAIR" }
+        }
+    },
+    ['barstool'] = {
+        teleportIn = true,
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_BAR" }
+        }
+    },
+    ['stool'] = {
+        teleportIn = true,
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER" }
+        },
+    },
+    ['deck'] = {
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_DECKCHAIR" }
+        }
+    },
+    ['sunlounger'] = {
+        skipGoStraightTask = true,
+        timeout = 12,
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_SUNLOUNGER" }
+        }
+    },
+    ['tattoo'] = {
+        animation = { dict = "misstattoo_parlour@shop_ig_4", name = "customer_loop",
+            offset = vector4(0.0, 0.0, -0.75, 0.0) }
+    },
+    ['strip_watch'] = {
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_STRIP_WATCH" }
+        }
+    },
+    ['diner_booth'] = {
+        teleportIn = true,
+        teleportOut = true,
+        scenarios = {
+            [1] = { name = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER" }
+        }
+    },
+    ['laysit'] = {
+        animation = { dict = "timetable@jimmy@mics3_ig_15@", name = "idle_a_jimmy", offset = vector4(0.0, 0.0, 0.0, 0.0) }
+    },
+    ['wall'] = {
+        scenarios = {
+            [1] = { name = "WORLD_HUMAN_SEAT_WALL" }
+        }
+    },
+    ['steps'] = {
+        scenarios = {
+            [1] = { name = "WORLD_HUMAN_SEAT_STEPS" }
+        }
+    },
+    ['ledge'] = {
+        scenarios = {
+            [1] = { name = "WORLD_HUMAN_SEAT_LEDGE" }
+        }
+    },
+    ['director'] = {
+        animation = { dict = "misscarsteal4@director_grip", name = "beginning_loop_director",
+            offset = vector4(0.0, 0.0, -1.16, 0.0) },
+        teleportOut = true
+    },
+}
+
+-- The diffrent laying settings, don't touch unless you know what you are doing.
+Config.LayTypes = {
+    ['default'] = { -- Default settings, if non has been spesified
+        animation = { dict = "misslamar1dead_body", name = "dead_idle" },
+        exitAnimType = 0, -- 0 = relative to camera | 1 = to the right | 2 = to the left
+        exitAnim = true
+    },
+    ['bed'] = {
+        animation = { dict = "misslamar1dead_body", name = "dead_idle" }
+    },
+    ['lay'] = {
+        animation = { dict = "savecouch@", name = "t_sleep_loop_couch", offset = vector4(-0.1, 0.1, -0.5, 270.0) }
+    },
+    ['layside'] = {
+        animation = { dict = "savecouch@", name = "t_sleep_loop_couch", offset = vector4(-0.1, 0.1, -0.5, 270.0) },
+        exitAnimType = 2
+    },
+    ['layside_reverse'] = {
+        animation = { dict = "savecouch@", name = "t_sleep_loop_couch", offset = vector4(0.1, 0.1, -0.5, 90.0) },
+        exitAnimType = 1
+    },
+    ['busstop'] = {
+        animation = { dict = "savecouch@", name = "t_sleep_loop_couch", offset = vector4(0.0, 0.0, -0.5, 270.0) }
+    },
+    ['medical'] = {
+        animation = { dict = "anim@gangops@morgue@table@", name = "body_search" }
+    },
+    ['tattoo'] = {
+        animation = { dict = "amb@world_human_sunbathe@male@front@base", name = "base",
+            offset = vector4(0.0, 0.0, 0.0, 180.0) },
+        exitAnim = false
+    }
+}
+
+-- Which preset (poly) locations that should be loaded. (disable/enable those you use!)
+Config.PresetLocations = {
+    -- Vanilla Interiors
+    coroner = true,
+    lscustoms = false,
+    mrpd = false,
+    pacific_standard = false,
+    paleto_bank = false,
+    paleto_so = false,
+    pdm = false,
+    sandy_so = false,
+    tattoo_shops = true,
+    tequilala = true,
+    trevors_trailer = true,
+    vanilla_unicorn = false,
+
+    -- Other Interiors
+    uniqx_burgershot = false,
+
+    -- Gabz Team Interiors
+    gabz_altruists = false,
+    gabz_atom = false,
+    gabz_aztecas = false,
+    gabz_bahama = false, -- Bahama Mamas
+    gabz_ballas = false,
+    gabz_bennys = false,
+    gabz_burgershot = false,
+    gabz_catcafe = false,
+    gabz_bobcat = false,
+    gabz_diner = false, -- Pop's Dinner
+    gabz_families = false,
+    gabz_firedept = false, -- El Burro & Davis
+    gabz_harmony = false,
+    gabz_haters = false,
+    gabz_hayes = false,
+    gabz_hornys = false,
+    gabz_import = false,
+    gabz_koi = false,
+    gabz_lamesa_pd = false,
+    gabz_lostsc = false,
+    gabz_lscustoms = false, -- This is NOT mutually exclusive with the regular lscustoms, just an add-on if you have gabz-lscustoms
+    gabz_marabunta = false,
+    gabz_mba = false, -- Maze Bank Arena
+    gabz_mrpd = false, -- Mission Row Police Deparment
+    gabz_paletocamp = false,
+    gabz_ottos = false,
+    gabz_pacific_standard = false, -- This is the new pacific standard from the gabz team.
+    gabz_pacific_standard_old = false, -- This is the old gabz pacific standard, it's a retexure of (+ some changes to) the base game version.
+    gabz_paleto_bank = false,
+    gabz_paleto_so = false,
+    gabz_park_ranger = false,
+    gabz_pdm = false,
+    gabz_pillbox = false,
+    gabz_pizzeria = false,
+    gabz_prison = false,
+    gabz_records = false, -- Records A Studios
+    gabz_sandy_so = false,
+    gabz_townhall = false,
+    gabz_triads = false,
+    gabz_tuners = false,
+    gabz_vagos = false,
+    gabz_vanilla_unicorn = false,
+    gabz_weedcamp = false,
+
+    -- These are just proofs of concept.
+    ledge = true,
+    steps = true,
+    wall = true,
+}
