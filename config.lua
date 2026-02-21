@@ -281,8 +281,11 @@ Config.Anim = {
 -- Sitz-Offset (wie der Spieler auf dem Stuhl positioniert wird)
 Config.SitOffset = vector3(0.0, 0.0, 0.35)
 
+-- First Person View beim Sitzen erzwingen?
+Config.ForceFPV = true -- true = First Person, false = Kamera bleibt wie sie ist
+
 -- Welches Framework / Target-System wird genutzt?
 -- 'ox'     → ox_target (QBox / QBCore mit ox_target)
 -- 'qb'     → qb-target
 -- 'esx'    → E-Key Prompt (ox_lib drawText)
-Config.TargetSystem = 'ox' -- << HIER ANPASSEN
+Config.TargetSystem = 'ox' -- 
