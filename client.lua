@@ -62,6 +62,11 @@ local function SitDown(chairEntity)
 
     -- Freeze Ped leicht damit er nicht rutscht
     FreezeEntityPosition(ped, true)
+
+    -- First Person View erzwingen (optional)
+    if Config.ForceFPV then
+        SetFollowPedCamViewMode(4)
+    end
 end
 
 -- ──────────────────────────────────────────────
@@ -73,6 +78,11 @@ local function StandUp()
     local ped = PlayerPedId()
     FreezeEntityPosition(ped, false)
     ClearPedTasks(ped)
+
+    -- First Person View zurücksetzen
+    if Config.ForceFPV then
+        SetFollowPedCamViewMode(1)
+    end
 
     isSitting    = false
     currentChair = nil
