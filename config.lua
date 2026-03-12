@@ -320,3 +320,27 @@ Config.PresetLocations = {
     steps = true,
     wall = true,
 }
+
+-- Hier kannst du deine non-nativen Props einfach eintragen.
+-- Diese nutzen dann automatisch die Standard-Sitz-Animation/Position.
+Config.SimpleModels = {
+    'prop_chair_01a', -- Beispiel
+    'prop_bench_01a', -- Beispiel
+    -- 'dein_custom_prop_name',
+}
+
+-- Für Fortgeschrittene: Hier können Props mit eigenen Offsets definiert werden.
+Config.Models = {
+    -- ['prop_name'] = {
+    --     sit = {
+    --         type = 'chair', -- Welcher Typ aus Config.SitTypes genutzt werden soll
+    --         seats = {
+    --             vector4(0.0, 0.0, 0.0, 0.0), -- Offset: x, y, z, heading
+    --         }
+    --     }
+    -- },
+}
+
+-- Hier werden die PolyZones gespeichert (für statische Bänke in MLOs etc.)
+Config.PolyZones = {}
+

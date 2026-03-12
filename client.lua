@@ -1,6 +1,36 @@
 -- Variables --
-local Models = GetModels()
-local PolyZones = GetPolyZones()
+local Models = {}
+local PolyZones = Config.PolyZones or {}
+
+-- Initialisierung der Models aus der Config
+local function InitializeModels()
+    -- Lade komplexe Models
+    if Config.Models then
+        for modelName, data in pairs(Config.Models) do
+            local hash = type(modelName) == 'number' and modelName or GetHashKey(modelName)
+            Models[hash] = data
+        end
+    end
+
+    -- Lade einfache Models (non-native/custom)
+    if Config.SimpleModels then
+        for _, modelName in ipairs(Config.SimpleModels) do
+            local hash = type(modelName) == 'number' and modelName or GetHashKey(modelName)
+            if not Models[hash] then
+                Models[hash] = {
+                    sit = {
+                        type = 'default',
+                        seats = {
+                            vector4(0.0, 0.0, 0.0, 0.0)
+                        }
+                    }
+                }
+            end
+        end
+    end
+end
+
+InitializeModels()
 
 local metadata = {
     isSitting = false,
